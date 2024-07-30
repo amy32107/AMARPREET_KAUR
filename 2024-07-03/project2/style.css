@@ -1,0 +1,99 @@
+body { /*whole body converted to pt sans*/
+    font-family: 'PT Sans', sans-serif;
+    background-color:black;
+    margin: 0;
+    color: white;
+    line-height: 1.6;
+}
+a{
+    text-decoration: none;/*no underline*/
+    color: whitesmoke;
+
+    
+}
+#showcase{
+    margin:0;
+    padding:0;
+    background:url('volleyball-game-beach-sunset-preview.jpg') no-repeat center/cover;
+    width: 100%;
+    height: 100vh;/*means viewport height ####A viewport is the visible area of a web page or application within a browser window or device screen. It defines the region in which content is displayed and can vary in size depending on the device or window dimensions. The viewport is crucial for responsive design, ensuring that web pages adapt to different screen sizes and orientations effectively.*/
+    position: relative;
+    overflow-y: hidden;
+}
+showcase .container {
+    margin-top: 25vh;
+    margin-bottom: 0;
+
+}
+#showcase h1{
+    font-size: 4rem; 
+    /* root elements font size  */
+}
+#showcase h2{
+    font-size: 2rem;
+}
+nav { /*nav bar*/
+    height: 40px;
+    width: 100%;
+    background-color:black;
+    color: rgb(211, 37, 37);
+    position: fixed;
+}
+nav ul{ /*navigation items*/
+ margin:0;
+ padding:0;
+}
+nav li{
+    padding-left: 10px;
+    display: inline;
+    float: left;
+}
+nav a {
+    display: inline-block;
+    width:100px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+/*top bottom/left right*/
+   
+}
+nav li:hover{
+    background-color: #444;
+}
+.container{
+    max-width: 1180px;
+    text-align: center;
+    margin:0 auto;
+    padding: 0 3rem;}
+
+    .lead{
+        font-size: 1.3rem;
+    }
+
+footer .footer-cols{
+    /*grid = rows and columns*/
+    display: grid;
+    grid: gap 20px;
+    grid-template-columns: repeat(4,1fr);/*same thing repeated 4 times with 1 fractional unit difference*/
+    padding: 2rem;
+    text-align: left;
+    font-size: 14px;
+}
+footer .footer-cols ul{
+    list-style: none;
+}
+footer .footer-cols ul li:first-child{
+font-size: 1.2rem;
+padding-bottom: 0.5rem;
+border-bottom: #444 solid 2px;
+margin-bottom: 1rem; 
+}
+
+footer .footer-bottom{
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    text-size-adjust: 8;
+}
+
+
