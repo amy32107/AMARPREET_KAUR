@@ -1,2 +1,2 @@
 # AMARPREET_KAUR
-HEY and welcome to my repository. This repository consists of my projects related to web-development, data science and DBMS.
+Welcome to my repository! Here you'll find projects related to web development (frontend), data science, and a simple bank database built using SQL. Explore to see my work in these areas.
