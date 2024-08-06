@@ -1,0 +1,47 @@
+body {
+    background-color: rgba(0, 0, 0, 0.771);
+}
+
+
+.calc {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#calculator {
+    color:white;
+    text-align: center;
+    font-size: 45px;
+    font-style: normal;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    font-size: 24px;
+    padding: 5px;
+    box-sizing: border-box;/*width and height include content, padding, and border. Margin is still added outside.*/
+}
+
+input[type="button"] {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    background-color: #2b62d9;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #1abed0;
+}

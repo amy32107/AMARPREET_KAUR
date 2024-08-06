@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todolist.css">
+    <script src="todolist.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="row">To-do List</h1>
+        <br>
+        <div class="row">
+         <form>
+            <div class="input-grp">
+                <input type="text" placeholder="to-do item" id="box" style="width: 30vw">
+            </div>
+            <br>
+            <div class="form-grp"><input type="button" value="Add" style="width:10vw" onclick="additem()"></div>
+         </form>
+        </div>
+        <div class="row">
+            <ul id="listitem"></ul><!--now script will be written cuz all actions depend on the script-->
+        </div>
+    </div>
+</body>
+</html>

@@ -14,7 +14,7 @@ a{
 #showcase{
     margin:0;
     padding:0;
-    background:url('volleyball-game-beach-sunset-preview.jpg') no-repeat center/cover;
+    background:url('https://c1.wallpaperflare.com/preview/280/751/739/volleyball-game-beach-sunset.jpg') no-repeat center/cover;
     width: 100%;
     height: 100vh;/*means viewport height ####A viewport is the visible area of a web page or application within a browser window or device screen. It defines the region in which content is displayed and can vary in size depending on the device or window dimensions. The viewport is crucial for responsive design, ensuring that web pages adapt to different screen sizes and orientations effectively.*/
     position: relative;

@@ -1,0 +1,35 @@
+<!--
+Target Color: it will be mentioned at the top and will be the target that has to be picked from remaining options
+New Color button: click it will reset the game
+"try again" message printed when wrong color is clicked and "correct" message should be printed once correct color is clicked
+once game is over "new color" button should change its name to "play again?"-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="colorpicker.css">
+    <script src = "colorpicker.js"></script>
+</head>
+<body>
+    <h1>Color Picker<br>
+     <span id="targetcolor"></span>
+     <br>
+</h1>
+    <div id="stripe">
+        <button id="newcolor">New Color</button>
+        <span id="message"></span>
+    </div>
+    <div class="container">
+     <div class="square"></div>
+     <div class="square"></div>
+     <div class="square"></div>
+     <div class="square"></div>
+     <div class="square"></div>
+     <div class="square"></div>
+
+    </div>
+</body>
+</html>

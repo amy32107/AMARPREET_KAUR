@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ccc53f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.576);/*0: The horizontal offset of the shadow. A value of 0 means the shadow will be directly behind the element (no horizontal offset).
+    0: The vertical offset of the shadow. A value of 0 means the shadow will be directly behind the element (no vertical offset).
+    10px: The blur radius of the shadow. A larger value will create a more blurred (soft) shadow.
+    rgba(0, 0, 0, 0.576): The color of the shadow. rgba stands for red, green, blue, and alpha (opacity). Here, the shadow is black (0, 0, 0), and the opacity is 0.576 (about 57.6% opaque).*/
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 20px;
+}
+
+input[type="button"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #164ac4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #00a4b3;
+}
+
+ul {
+    list-style-type: circle;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,3 +1,4 @@
+-- a simple bank database !!
 create database BM_DB;
 use BM_DB;
 show databases;
