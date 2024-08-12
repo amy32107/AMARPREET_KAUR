@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp"><!--application-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple angular js app</title>
+    <link rel="stylesheet" href="angular.css">
+    <script src="angular.js"></script>
+</head>
+<body ng-controller="myController">
+    <div>
+    <h3>Enter Your Name</h3>
+    <input type="text" ng-model="name" placeholder="Name"><!--model-->
+    <p>Hello <strong>{{name}}</strong> !</p><!--two way binding of name (or string interpolation)whatever you write here same thing will be presented in the controller $scope.name-->
+    <p>Welcome to Angular js!</p>
+</div>
+    <script>
+        var app = angular.module("myApp",[]);//a module is created named my app which is root point of this application
+        app.controller("myController",function($scope){//the c of mvc architechture controller always has a function $scope is a predefined thing controller controls the functioning of the module
+            $scope.name="";
+        });
+
+    </script>
+</body>
+</html>

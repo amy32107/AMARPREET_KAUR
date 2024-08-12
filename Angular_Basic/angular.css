@@ -1,0 +1,88 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: bl;
+}
+
+div {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.527);
+    /*
+    box-shadow: [horizontal-offset] [vertical-offset] [blur-radius] [spread-radius] [color];
+    Horizontal Offset (0):
+
+Value: 0
+Explanation: This defines the horizontal position of the shadow relative to the element. A positive value moves the shadow to the right, a negative value moves it to the left, and 0 means the shadow is directly underneath the element without horizontal displacement.
+Vertical Offset (10px):
+
+Value: 10px
+Explanation: This defines the vertical position of the shadow. A positive value moves the shadow downward, a negative value moves it upward, and 0 places it directly behind the element. In this case, the shadow is 10 pixels below the element.
+Blur Radius (20px):
+
+Value: 20px
+Explanation: This controls how blurred the shadow is. A larger value will make the shadow more diffuse and spread out, creating a softer shadow. A value of 0 would create a sharp shadow with no blur. In this case, the shadow is blurred by 20 pixels.
+
+*/
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: darkblue;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+strong {
+    color: #007BFF;
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+input[type="text"]:hover {
+    border-color: #0056b3;
+}
+
+div:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
