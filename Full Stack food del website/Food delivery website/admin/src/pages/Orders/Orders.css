@@ -1,0 +1,163 @@
+/* Base Styles for Orders Page */
+.order {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.order h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Order Item Styling */
+.order-item {
+    display: grid;
+    grid-template-columns: 80px 3fr 1fr;
+    align-items: start;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+/* Order Item Image */
+.order-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Order Item Content */
+.order-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Highlighted Text: Order, Items, and Price */
+.order-item .order-item-food,
+.order-item .order-item-right p {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Remove Box around Name */
+.order-item .order-item-name {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Regular Address and Phone Styling */
+.order-item .order-item-address p {
+    margin: 0;
+    line-height: 1.6;
+    color: #666; /* Softer color for less emphasis */
+}
+
+.order-item .order-item-phone {
+    margin-top: 5px;
+    color: #666; /* Softer color for less emphasis */
+}
+
+/* Right Section (Items, Price, and Status) */
+.order-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    text-align: right;
+}
+
+.order-item-right p {
+    margin: 0;
+}
+
+/* Dropdown Styling */
+.order-item select {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: tomato;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+}
+
+.order-item select:hover {
+    background-color: #ff4b42; /* Darker tomato color for hover effect */
+}
+
+.order-item select option {
+    background-color: white;
+    color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .order-item {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+
+    .order-item-right {
+        align-items: center;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .order-item img {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-item {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+
+    .order-item-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .order-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* New Adjustments for Better Spacing and Layout */
+.order-item {
+    padding: 20px;
+    gap: 30px; /* Increase gap for better readability */
+}
+
+.order-item div {
+    gap: 10px; /* Increase gap between content elements */
+}
