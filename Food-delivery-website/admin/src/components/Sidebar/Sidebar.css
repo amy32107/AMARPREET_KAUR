@@ -1,0 +1,82 @@
+/* Base styles */
+.sidebar {
+    width: 18%;
+    min-height: 100vh;
+    border: 1.5px solid #a9a9a9;
+    border-top: 0;
+    font-size: max(1vw, 10px);
+    transition: all 0.3s ease-in-out; /* Smooth transitions for responsive changes */
+}
+
+.sidebar-options {
+    padding-top: 50px;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #a9a9a9;
+    border-right: 0;
+    padding: 8px 10px;
+    border-radius: 3px 0px 0px 3px;
+    cursor: pointer;
+}
+.sidebar-option.active{
+    background-color: #fff0ed;
+    border-color: tomato;
+}
+/* Responsive styles */
+
+/* Medium screens (tablets, small desktops) */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 25%; /* Increase the sidebar width for medium screens */
+    }
+    .sidebar-options {
+        padding-left: 15%; /* Adjust padding for medium screens */
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 35%; /* Adjust sidebar width for smaller screens */
+        font-size: max(2vw, 12px); /* Increase font size slightly for better readability */
+    }
+    .sidebar-options {
+        padding-left: 10%;
+        gap: 15px; /* Reduce gap between options for smaller screens */
+    }
+    .sidebar-option {
+        padding: 6px 8px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Extra small screens (very small mobile devices) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%; /* Make sidebar full width on very small screens */
+        position: relative;
+        min-height: auto; /* Let the height adapt to the content */
+        border: none; /* Remove borders for a cleaner look */
+        border-bottom: 1.5px solid #a9a9a9; /* Optional: Add a bottom border */
+    }
+    .sidebar-options {
+        padding: 20px 10px; /* Reduce padding for extra small screens */
+        flex-direction: row; /* Change layout to row for better use of space */
+        gap: 10px; /* Reduce gap */
+        justify-content: space-between; /* Space out options */
+    }
+    .sidebar-option {
+        flex: 1; /* Let options take equal space */
+        justify-content: center; /* Center the content */
+        padding: 8px 5px; /* Adjust padding */
+        font-size: 12px; /* Adjust font size */
+    }
+}
