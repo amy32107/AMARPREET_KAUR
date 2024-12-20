@@ -1,0 +1,84 @@
+.my-orders-order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 15px;
+}
+.my-orders h2{
+    margin-top: 30px  ;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.my-orders-order img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.my-orders-order p {
+    margin: 0 15px;  /* Add margin for spacing between text */
+    font-size: 1rem;
+    color: #333;
+    flex: 1;
+    text-align: left;
+}
+
+.my-orders-order p span {
+    color: green;
+}
+
+.my-orders-order p b {
+    font-weight: bold;
+    color: #333;
+}
+
+.my-orders-order .order-status {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between status and text */
+}
+
+.my-orders-order button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.my-orders-order button:hover {
+    background-color: #d32f2f;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .my-orders-order {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .my-orders-order img {
+        margin-bottom: 10px;
+    }
+
+    .my-orders-order p {
+        padding-left: 0;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .my-orders-order button {
+        align-self: stretch;
+        text-align: center;
+    }
+}

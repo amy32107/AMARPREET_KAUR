@@ -1,0 +1,109 @@
+/* Ensure the list spans the full width on all screen sizes */
+.list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .list p {
+    
+    margin-bottom: 20px;
+    
+  }
+  /* Ensure the items table spans the full width on all screen sizes */
+  .list-table {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Set up the grid system for larger screens */
+  .list-table-format.title {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 0.5fr; /* Matches cart page layout */
+    align-items: center;
+    color: grey;
+    font-size: max(1vw, 12px);
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  /* General styling for list items */
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 0.5fr; /* Matches cart page layout */
+    align-items: center;
+    margin: 10px 0px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for images in list items */
+  .list-table-format img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  /* General text styling for list items */
+  .list-table-format p {
+    padding-top: 10px;
+    text-align: left;
+    font-size: max(1vw, 12px);
+    color: black;
+  }
+  
+  /* Styling for the action button */
+  .list-table-format p:last-child {
+    margin-top: 15px;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .list-table-format p:last-child:hover {
+    background-color: #e33e3f;
+  }
+  
+  /* Remove bottom border from last row */
+  .list-table-format:last-child {
+    border-bottom: none;
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  /* For tablets and smaller devices */
+  @media (max-width: 768px) {
+    .list-table-format.title {
+      grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 480px) {
+    .list-table-format.title {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .list-table-format {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
