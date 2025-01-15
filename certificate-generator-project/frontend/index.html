@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+  <div class="container">
+    <h1>Certificate Generator</h1>
+    <form id="certificateForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter the person's name..." required>
+      
+      <label for="category">Category Name:</label>
+      <input type="text" id="category" name="category" placeholder="Enter category name..." required>
+      
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      
+      <button type="submit">Generate</button>
+    </form>
+    <div id="certificates">
+      <!-- Certificates will be dynamically generated here -->
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="canvas.js"></script>
+</body>
+</html>
