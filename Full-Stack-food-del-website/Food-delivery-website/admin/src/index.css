@@ -15,17 +15,25 @@ body{
 a{
   text-decoration: none;
   color: inherit;
+  /*Removes underlines from links (text-decoration: none).
+Ensures links inherit their parent element's color (color: inherit).*/
 }
 hr{
   border: none;
   height: 1px;
   background-color: #a9a9a9;
+  /*Removes the default border.
+Sets the height to 1px.
+Gives a gray background color for a clean, simple divider.
+*/
 }
 
 .app-content{
   display: flex;
+  /*Makes the content inside it display in a horizontal line (using flex).*/
   
 }
 .cursor{
   cursor: pointer;
+  /*Changes the mouse pointer to a clickable hand icon (useful for buttons or interactive elements).*/
 }
