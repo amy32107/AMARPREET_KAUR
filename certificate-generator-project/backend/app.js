@@ -49,10 +49,14 @@ Customize the sentence to make it meaningful and aligned with the category, whil
 
 
 
-    const response = await ollama.chat({
-      model: 'llama3.2',
-      messages: [{ role: 'user', content: prompt }],
-    });
+const OLLAMA_API_URL = process.env.OLLAMA_API_URL || 'http://127.0.0.1:11434';
+
+const response = await ollama.chat({
+  model: 'llama3.2',
+  messages: [{ role: 'user', content: prompt }],
+  host: OLLAMA_API_URL,  // Explicitly set the API host
+});
+
 
     let certificateText = response.message.content;
 
