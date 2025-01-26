@@ -41,34 +41,32 @@ Generate certificate content using the following details:
 4. Do not include statements like here is the certificate content.
 5. Only directly Give certificate content.
 
-Exact output :
+Exact output:
 "Certificate of Completion Awarded to ${name} for successfully completing the course in ${category}."
 
-Customize the sentence to make it meaningful and aligned with the category, while keeping it to one or two line.
+Customize the sentence to make it meaningful and aligned with the category, while keeping it to one or two lines.
 `;
 
+    // External API URL (Ollama)
+    const OLLAMA_API_URL = process.env.OLLAMA_API_URL || 'http://127.0.0.1:11434';
 
+    const response = await ollama.chat({
+      model: 'llama3.2',
+      messages: [{ role: 'user', content: prompt }],
+      host: OLLAMA_API_URL, // Explicitly set the API host
+    });
 
-const OLLAMA_API_URL = process.env.OLLAMA_API_URL || 'http://127.0.0.1:11434';
-
-const response = await ollama.chat({
-  model: 'llama3.2',
-  messages: [{ role: 'user', content: prompt }],
-  host: OLLAMA_API_URL,  // Explicitly set the API host
-});
-
+    if (!response || !response.message || !response.message.content) {
+      throw new Error('Invalid response from Ollama API');
+    }
 
     let certificateText = response.message.content;
 
-// Sanitize the response by removing any unnecessary prefixes
-// Remove unwanted phrases
-// Remove unwanted phrases
-certificateText = certificateText
-  .replace(/^(Here is a concise certificate content:|Here is the certificate content:|Here is the customized certificate content:)/i, '') // Remove introductory phrases
-  .replace(new RegExp(`\\bPresented to:\\s*${name}`, 'i'), '') // Remove "Presented to: {name}" dynamically
-  .trim();
-
-
+    // Sanitize the response by removing any unnecessary prefixes
+    certificateText = certificateText
+      .replace(/^(Here is a concise certificate content:|Here is the certificate content:|Here is the customized certificate content:)/i, '') // Remove introductory phrases
+      .replace(new RegExp(`\\bPresented to:\\s*${name}`, 'i'), '') // Remove "Presented to: {name}" dynamically
+      .trim();
 
     console.log('[POST /generate-certificate] Certificate content generated:', certificateText);
 
@@ -77,6 +75,11 @@ certificateText = certificateText
     console.error('[POST /generate-certificate] Error generating certificate:', error);
     res.status(500).json({ error: 'Failed to generate certificate', details: error.message });
   }
+});
+
+// Catch-all route for frontend routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });
 
 // Start the server
