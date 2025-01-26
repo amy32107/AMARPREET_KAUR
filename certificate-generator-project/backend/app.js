@@ -71,19 +71,29 @@ Customize the sentence to make it meaningful and aligned with the category, whil
 `;
 
     // External API URL (Ollama)
-    const OLLAMA_API_URL = process.env.OLLAMA_API_URL || 'http://localhost:11434';
+    const HF_API_URL = process.env.HF_API_URL || 'https://api-inference.huggingface.co/models/meta-llama/Llama-2-7b-chat-hf';
+const HF_API_KEY = process.env.HF_API_KEY;
 
-    const response = await ollama.chat({
-      model: 'llama3.2',
-      messages: [{ role: 'user', content: prompt }],
-      host: OLLAMA_API_URL, // Explicitly set the API host
-    });
+const response = await fetch(HF_API_URL, {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${HF_API_KEY}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ inputs: prompt }),
+});
 
-    if (!response || !response.message || !response.message.content) {
-      throw new Error('Invalid response from Ollama API');
-    }
+if (!response.ok) {
+  throw new Error(`Hugging Face API error: ${response.statusText}`);
+}
 
-    let certificateText = response.message.content;
+const data = await response.json();
+if (!data || data.error) {
+  throw new Error('Invalid response from Hugging Face API');
+}
+
+let certificateText = data[0]?.generated_text || 'Certificate generation failed';
+
 
     // Sanitize the response by removing any unnecessary prefixes
     certificateText = certificateText
