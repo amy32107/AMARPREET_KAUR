@@ -34,7 +34,7 @@ document.getElementById('certificateForm').addEventListener('submit', async (eve
   img.onload = async () => {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-    const response = await fetch('https://certificategenerator-amarpreet.onrender.com/generate-certificate', {
+    const response = await fetch('https://certificategenerator-amarpreet.onrender.com/backend/generate-certificate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, category, date }),
