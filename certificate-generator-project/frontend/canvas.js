@@ -33,8 +33,9 @@ document.getElementById('certificateForm').addEventListener('submit', async (eve
 
   img.onload = async () => {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
-    const response = await fetch('http://localhost:3000/generate-certificate', {
+    const response = await fetch(`${apiUrl}/generate-certificate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, category, date }),
