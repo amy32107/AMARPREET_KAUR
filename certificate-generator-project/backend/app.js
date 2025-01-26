@@ -7,8 +7,22 @@ import path from 'path';
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-// Enable CORS
-app.use(cors());
+// Enable CORS with specific allowed origin
+const allowedOrigins = [
+  'https://certificate-generator-amarpreet.onrender.com', // Add your frontend URL here
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS not allowed from this origin'));
+    }
+  },
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 // Parse JSON bodies
 app.use(bodyParser.json());
