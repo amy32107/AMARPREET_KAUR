@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 // Serve static files (frontend)
 const __dirname = path.resolve(); // Use `path.resolve()` for ES modules
-app.use(express.static(path.join(__dirname, 'frontend')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Health check endpoint
 app.get('/health', (req, res) => {
