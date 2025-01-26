@@ -23,7 +23,7 @@ app.get('/health', (req, res) => {
 });
 
 // Endpoint to generate certificate content
-app.post('/backend/generate-certificate', async (req, res) => {
+app.post('/generate-certificate', async (req, res) => {
   const { name, category, date } = req.body;
 
   if (!name || !category || !date) {
