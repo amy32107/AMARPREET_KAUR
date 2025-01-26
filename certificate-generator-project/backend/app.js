@@ -48,7 +48,7 @@ Customize the sentence to make it meaningful and aligned with the category, whil
 `;
 
     // External API URL (Ollama)
-    const OLLAMA_API_URL = process.env.OLLAMA_API_URL || 'http://127.0.0.1:11434';
+    const OLLAMA_API_URL = process.env.OLLAMA_API_URL || 'http://localhost:11434';
 
     const response = await ollama.chat({
       model: 'llama3.2',
