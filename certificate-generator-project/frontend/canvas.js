@@ -33,7 +33,10 @@ document.getElementById('certificateForm').addEventListener('submit', async (eve
 
   img.onload = async () => {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+    const apiUrl = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000' 
+    : 'https://certificategenerator-amarpreet.onrender.com';
+
 
     const response = await fetch(`${apiUrl}/generate-certificate`, {
       method: 'POST',
