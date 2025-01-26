@@ -9,12 +9,13 @@ const app = express();
 
 // Enable CORS
 app.use(cors());
+
 // Parse JSON bodies
 app.use(bodyParser.json());
 
-// Serve static files (frontend)
-const __dirname = path.resolve(); // Use `path.resolve()` for ES modules
-app.use(express.static(path.join(__dirname, 'frontend')));
+// Serve static files correctly (from frontend folder)
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -33,6 +34,7 @@ app.post('/generate-certificate', async (req, res) => {
 
   try {
     console.log(`[POST /generate-certificate] Generating certificate for: Name=${name}, Category=${category}, Date=${date}`);
+
     const prompt = `
 Generate certificate content using the following details:
 1. Title: "Certificate of Completion".
