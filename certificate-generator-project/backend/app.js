@@ -7,29 +7,8 @@ import path from 'path';
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-// Enable CORS with specific allowed origin
-const allowedOrigins = [
-  'https://certificate-generator-amarpreet.onrender.com'  // Correct frontend URL
-];
-
-app.use((req, res, next) => {
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-  }
-
-  // Handle preflight request
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-
-  next();
-});
-
+// Enable CORS
+app.use(cors());
 
 // Parse JSON bodies
 app.use(bodyParser.json());
@@ -71,29 +50,19 @@ Customize the sentence to make it meaningful and aligned with the category, whil
 `;
 
     // External API URL (Ollama)
-    const HF_API_URL = process.env.HF_API_URL || 'https://api-inference.huggingface.co/models/meta-llama/Llama-2-7b-chat-hf';
-const HF_API_KEY = process.env.HF_API_KEY;
+    const OLLAMA_API_URL = process.env.OLLAMA_API_URL || 'http://localhost:11434';
 
-const response = await fetch(HF_API_URL, {
-  method: 'POST',
-  headers: {
-    'Authorization': `Bearer ${HF_API_KEY}`,
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ inputs: prompt }),
-});
+    const response = await ollama.chat({
+      model: 'llama3.2',
+      messages: [{ role: 'user', content: prompt }],
+      host: OLLAMA_API_URL, // Explicitly set the API host
+    });
 
-if (!response.ok) {
-  throw new Error(`Hugging Face API error: ${response.statusText}`);
-}
+    if (!response || !response.message || !response.message.content) {
+      throw new Error('Invalid response from Ollama API');
+    }
 
-const data = await response.json();
-if (!data || data.error) {
-  throw new Error('Invalid response from Hugging Face API');
-}
-
-let certificateText = data[0]?.generated_text || 'Certificate generation failed';
-
+    let certificateText = response.message.content;
 
     // Sanitize the response by removing any unnecessary prefixes
     certificateText = certificateText
