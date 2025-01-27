@@ -33,10 +33,9 @@ document.getElementById('certificateForm').addEventListener('submit', async (eve
 
   img.onload = async () => {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    const apiUrl = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3000' 
-    : 'https://certificate-generator-amarpreet.onrender.com';
-
+    const apiUrl = window.location.hostname.includes('localhost') 
+  ? 'http://localhost:3000' 
+  : window.location.origin;
 
     const response = await fetch(`${apiUrl}/generate-certificate`, {
       method: 'POST',

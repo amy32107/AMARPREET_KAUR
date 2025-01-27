@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "jspdf": "^2.5.2"
+    "jspdf": "^2.5.2",
+    "serve": "^14.2.0"
+  },
+  "scripts": {
+    "start": "serve -s .",
+    "vercel-build": "echo 'No build step required for frontend'"
   }
 }
